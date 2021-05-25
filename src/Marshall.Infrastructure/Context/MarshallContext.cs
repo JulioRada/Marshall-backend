@@ -1,4 +1,5 @@
 ﻿using Marshall.Domain.Entities;
+using Marshall.Infrastructure.Seeds;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -22,8 +23,9 @@ namespace Marshall.Infrastructure.Context
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
-
+            modelBuilder.SeedOffice();
+            modelBuilder.SeedDivision();
+            modelBuilder.SeedPosition();
         }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
