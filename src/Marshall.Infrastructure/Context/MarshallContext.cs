@@ -26,6 +26,7 @@ namespace Marshall.Infrastructure.Context
             modelBuilder.SeedOffice();
             modelBuilder.SeedDivision();
             modelBuilder.SeedPosition();
+            modelBuilder.SeedSalary();
         }
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
