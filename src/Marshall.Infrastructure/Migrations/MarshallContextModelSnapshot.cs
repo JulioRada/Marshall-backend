@@ -38,32 +38,6 @@ namespace Marshall.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Division");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Operation"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Sales"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Marketing"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Customer care"
-                        });
                 });
 
             modelBuilder.Entity("Marshall.Domain.Entities.Office", b =>
@@ -85,32 +59,6 @@ namespace Marshall.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Office");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "A"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "C"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "D"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "ZZ"
-                        });
                 });
 
             modelBuilder.Entity("Marshall.Domain.Entities.Position", b =>
@@ -132,56 +80,6 @@ namespace Marshall.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Position");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Cargo manager"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Head manager"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Cargo assistant"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Sales manager"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Account executive"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Marketing assistant"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Customer director"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Created = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Name = "Customer assistant"
-                        });
                 });
 
             modelBuilder.Entity("Marshall.Domain.Entities.Salary", b =>
@@ -191,8 +89,8 @@ namespace Marshall.Infrastructure.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<float>("BaseSalary")
-                        .HasColumnType("real");
+                    b.Property<double>("BaseSalary")
+                        .HasColumnType("float");
 
                     b.Property<DateTime>("BeginDate")
                         .HasColumnType("datetime2");
@@ -200,14 +98,14 @@ namespace Marshall.Infrastructure.Migrations
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
 
-                    b.Property<float>("Commission")
-                        .HasColumnType("real");
+                    b.Property<double>("Commission")
+                        .HasColumnType("float");
 
-                    b.Property<float>("CompensationBonus")
-                        .HasColumnType("real");
+                    b.Property<double>("CompensationBonus")
+                        .HasColumnType("float");
 
-                    b.Property<float>("Contributions")
-                        .HasColumnType("real");
+                    b.Property<double>("Contributions")
+                        .HasColumnType("float");
 
                     b.Property<DateTime>("Created")
                         .HasColumnType("datetime2");
@@ -239,8 +137,8 @@ namespace Marshall.Infrastructure.Migrations
                     b.Property<int>("PositionId")
                         .HasColumnType("int");
 
-                    b.Property<float>("ProductionBonus")
-                        .HasColumnType("real");
+                    b.Property<double>("ProductionBonus")
+                        .HasColumnType("float");
 
                     b.Property<DateTime?>("Updated")
                         .HasColumnType("datetime2");

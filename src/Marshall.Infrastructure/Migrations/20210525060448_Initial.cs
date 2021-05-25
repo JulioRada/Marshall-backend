@@ -72,11 +72,11 @@ namespace Marshall.Infrastructure.Migrations
                     BeginDate = table.Column<DateTime>(nullable: false),
                     Birthday = table.Column<DateTime>(nullable: false),
                     IdentificationNumber = table.Column<string>(type: "varchar(10)", nullable: false),
-                    BaseSalary = table.Column<float>(nullable: false),
-                    ProductionBonus = table.Column<float>(nullable: false),
-                    CompensationBonus = table.Column<float>(nullable: false),
-                    Commission = table.Column<float>(nullable: false),
-                    Contributions = table.Column<float>(nullable: false)
+                    BaseSalary = table.Column<double>(nullable: false),
+                    ProductionBonus = table.Column<double>(nullable: false),
+                    CompensationBonus = table.Column<double>(nullable: false),
+                    Commission = table.Column<double>(nullable: false),
+                    Contributions = table.Column<double>(nullable: false)
                 },
                 constraints: table =>
                 {
