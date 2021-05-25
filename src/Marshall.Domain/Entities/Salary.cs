@@ -9,6 +9,9 @@ namespace Marshall.Domain.Entities
 {
     public class Salary : Entity
     {
+        public Salary()
+        {
+        }
         public Salary(
             int year,
             int month,
@@ -22,11 +25,11 @@ namespace Marshall.Domain.Entities
             DateTime beginDate,
             DateTime birthday,
             string identificationNumber,
-            float baseSalary,
-            float productionBonus,
-            float compensationBonus,
-            float commission,
-            float contributions
+            double baseSalary,
+            double productionBonus,
+            double compensationBonus,
+            double commission,
+            double contributions
         )
         {
             Year = year;
@@ -63,10 +66,10 @@ namespace Marshall.Domain.Entities
         public DateTime BeginDate { get; set; }
         public DateTime Birthday { get; set; }
         public string IdentificationNumber { get; set; }
-        public float BaseSalary { get; set; }
-        public float ProductionBonus { get; set; }
-        public float CompensationBonus { get; set; }
-        public float Commission { get; set; }
-        public float Contributions { get; set; }
+        public double BaseSalary { get; set; }
+        public double ProductionBonus { get; set; }
+        public double CompensationBonus { get; set; }
+        public double Commission { get; set; }
+        public double Contributions { get; set; }
     }
 }
