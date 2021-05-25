@@ -15,7 +15,7 @@ namespace Marshall.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Created = table.Column<DateTime>(nullable: false),
                     Updated = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(type: "varchar(40)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,7 +30,7 @@ namespace Marshall.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Created = table.Column<DateTime>(nullable: false),
                     Updated = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(type: "varchar(3)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,7 +45,7 @@ namespace Marshall.Infrastructure.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Created = table.Column<DateTime>(nullable: false),
                     Updated = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(type: "varchar(40)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,15 +63,15 @@ namespace Marshall.Infrastructure.Migrations
                     Year = table.Column<int>(nullable: false),
                     Month = table.Column<int>(nullable: false),
                     OfficeId = table.Column<int>(nullable: false),
-                    EmployeeCode = table.Column<string>(nullable: true),
-                    EmployeeName = table.Column<string>(nullable: true),
-                    EmployeeSurname = table.Column<string>(nullable: true),
+                    EmployeeCode = table.Column<string>(type: "varchar(10)", nullable: false),
+                    EmployeeName = table.Column<string>(type: "varchar(150)", nullable: false),
+                    EmployeeSurname = table.Column<string>(type: "varchar(150)", nullable: false),
                     DivisionId = table.Column<int>(nullable: false),
                     PositionId = table.Column<int>(nullable: false),
                     Grade = table.Column<int>(nullable: false),
                     BeginDate = table.Column<DateTime>(nullable: false),
                     Birthday = table.Column<DateTime>(nullable: false),
-                    IdentificationNumber = table.Column<string>(nullable: true),
+                    IdentificationNumber = table.Column<string>(type: "varchar(10)", nullable: false),
                     BaseSalary = table.Column<float>(nullable: false),
                     ProductionBonus = table.Column<float>(nullable: false),
                     CompensationBonus = table.Column<float>(nullable: false),
