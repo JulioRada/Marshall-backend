@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Marshall.IoC;
 
 namespace Marshall.Api
 {
@@ -25,6 +26,8 @@ namespace Marshall.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddDbContext(Configuration);
+            services.Register();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
