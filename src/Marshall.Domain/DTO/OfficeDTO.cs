@@ -1,4 +1,4 @@
-﻿using Marshall.Core.Commands;
+﻿using Marshall.Core.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;

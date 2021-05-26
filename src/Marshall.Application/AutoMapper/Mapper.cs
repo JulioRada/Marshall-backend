@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Marshall.Core.Commands;
+using Marshall.Core.DTO;
 using Marshall.Core.Entity;
 using System;
 using System.Collections.Generic;
