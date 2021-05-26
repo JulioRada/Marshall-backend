@@ -1,4 +1,5 @@
-﻿using Marshall.Application.Office;
+﻿using Marshall.Application.Division;
+using Marshall.Application.Office;
 using Marshall.Domain.Interfaces.Repositories;
 using Marshall.Infrastructure.Context;
 using Marshall.Infrastructure.Repositories;
@@ -19,9 +20,10 @@ namespace Marshall.IoC
             services.AddScoped<IOfficeRepository, OfficeRepository>();
             services.AddScoped<IDivisionRepository, DivisionRepository>();
             services.AddScoped<IPositionRepository, PositionRepository>();
-
+            
             // Queries
             services.AddScoped<IOfficeQueries, OfficeQueries>();
+            services.AddScoped<IDivisionQueries, DivisionQueries>();
         }
         public static void AddDbContext(this IServiceCollection services, IConfiguration configuration)
         {

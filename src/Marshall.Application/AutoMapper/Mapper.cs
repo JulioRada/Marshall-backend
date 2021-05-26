@@ -7,24 +7,24 @@ using System.Text;
 
 namespace Marshall.Application.AutoMapper
 {
-    public static class Mapper<TEntity, TCommand>
+    public static class Mapper<TEntity, TDTO>
         where TEntity : Entity
-        where TCommand : CommandBase
+        where TDTO : BaseDTO
     {
 
-        public static TCommand EntityToDTO(TEntity entity)
+        public static TDTO EntityToDTO(TEntity entity)
         {
-            var config = new MapperConfiguration(c => c.CreateMap<TEntity, TCommand>());
+            var config = new MapperConfiguration(c => c.CreateMap<TEntity, TDTO>());
 
             var mapper = config.CreateMapper();
-            return mapper.Map<TCommand>(entity);
+            return mapper.Map<TDTO>(entity);
         }
-        public static IEnumerable<TCommand> EntityToDTO(IEnumerable<TEntity> entity)
+        public static IEnumerable<TDTO> EntityToDTO(IEnumerable<TEntity> entity)
         {
-            var config = new MapperConfiguration(c => c.CreateMap<TEntity, TCommand>());
+            var config = new MapperConfiguration(c => c.CreateMap<TEntity, TDTO>());
 
             var mapper = config.CreateMapper();
-            return mapper.Map<IEnumerable<TCommand>>(entity);
+            return mapper.Map<IEnumerable<TDTO>>(entity);
         }
     }
 }

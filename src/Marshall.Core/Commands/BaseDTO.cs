@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Marshall.Core.Commands
 {
-    public abstract class CommandBase
+    public abstract class BaseDTO
     {
     }
 }

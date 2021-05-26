@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Marshall.Domain.DTO
 {
-    public class OfficeDTO: BaseDTO
+    public class DivisionDTO: BaseDTO
     {
         public int Id { get; set; }
         public string Name { get; set; }
