@@ -1,4 +1,6 @@
-﻿using Marshall.Domain.Interfaces.Repositories;
+﻿using Marshall.Application.AutoMapper;
+using Marshall.Domain.DTO;
+using Marshall.Domain.Interfaces.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,13 +15,16 @@ namespace Marshall.Application.Office
         {
             _officeRepository = officeRepository;
         }
-        public async Task<IEnumerable<Marshall.Domain.Entities.Office>> GetAllAsync()
+        public async Task<IEnumerable<OfficeDTO>> GetAllAsync()
         {
-            return await _officeRepository.GetAllAsync();
+            var result = await _officeRepository.GetAllAsync();
+            
+            var office = Mapper<Marshall.Domain.Entities.Office, OfficeDTO>.EntityToDTO(result);
+            return office;
         }
     }
     public interface IOfficeQueries
     {
-        Task<IEnumerable<Marshall.Domain.Entities.Office>> GetAllAsync();
+        Task<IEnumerable<OfficeDTO>> GetAllAsync();
     }
 }
