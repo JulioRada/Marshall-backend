@@ -6,6 +6,7 @@ using Marshall.Core.Interfaces;
 using Marshall.Domain.Commands.Salary;
 using FluentValidation;
 using Marshall.Domain.Interfaces.Repositories;
+using Marshall.Application.AutoMapper;
 
 namespace Marshall.Application.Salary
 {
@@ -31,9 +32,9 @@ namespace Marshall.Application.Salary
 
             if (validationResult.IsValid)
             {
-                // logica de registro
-                var book = SalaryMapper.CommandToEntity(command);
-                _salaryRepository.Add(book);
+                var listSalary = SalaryMapper.CommandToListEntity(command);
+   
+                _salaryRepository.Add(listSalary);
                 _salaryRepository.SaveChanges();
             }
 

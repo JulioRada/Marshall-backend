@@ -1,4 +1,5 @@
-﻿using Marshall.Domain.Commands.Salary;
+﻿using Marshall.Core.Interfaces;
+using Marshall.Domain.Commands.Salary;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,10 +13,17 @@ namespace Marshall.Api.Controllers
     [ApiController]
     public class SalaryController : ControllerBase
     {
+        private readonly ICommandHandler<CreateSalaryCommand> _createSalaryCommandHandler;
+
+        public SalaryController(ICommandHandler<CreateSalaryCommand> createSalaryCommandHandler)
+        {
+            _createSalaryCommandHandler = createSalaryCommandHandler;
+        }
+
         [HttpPost]
         public IActionResult Post(CreateSalaryCommand command)
         {
-            return Ok();
+            return Ok(_createSalaryCommandHandler.Handle(command));
         }
     }
 }

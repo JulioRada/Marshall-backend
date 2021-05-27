@@ -12,6 +12,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Marshall.Application.Cors;
+using Marshall.Application.Salary;
+using Marshall.Core.Interfaces;
+using Marshall.Domain.Commands.Salary;
+using FluentValidation;
+using Marshall.Domain.Commands.Salary.Validators;
 
 namespace Marshall.IoC
 {
@@ -23,7 +28,11 @@ namespace Marshall.IoC
             services.AddScoped<IOfficeRepository, OfficeRepository>();
             services.AddScoped<IDivisionRepository, DivisionRepository>();
             services.AddScoped<IPositionRepository, PositionRepository>();
-            
+            services.AddScoped<ISalaryRepository, SalaryRepository>();
+
+            //commandHandlers
+            services.AddScoped<ICommandHandler<CreateSalaryCommand>, CreateSalaryCommandHandler>();
+
             // Queries
             services.AddScoped<IOfficeQueries, OfficeQueries>();
             services.AddScoped<IDivisionQueries, DivisionQueries>();
