@@ -30,7 +30,10 @@ namespace Marshall.IoC
             services.AddScoped<IPositionRepository, PositionRepository>();
             services.AddScoped<ISalaryRepository, SalaryRepository>();
 
-            //commandHandlers
+            // Validators
+            services.AddScoped<IValidator<CreateSalaryCommand>, CreateSalaryCommandValidator>();
+
+            // CommandHandlers
             services.AddScoped<ICommandHandler<CreateSalaryCommand>, CreateSalaryCommandHandler>();
 
             // Queries

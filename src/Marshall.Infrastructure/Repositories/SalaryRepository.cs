@@ -4,6 +4,7 @@ using Marshall.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,11 @@ namespace Marshall.Infrastructure.Repositories
             return await _marshallContext.Salary.AnyAsync(
                 s => s.EmployeeName.Equals(employeeName) && s.EmployeeSurname.Equals(employeeSurname)
             );
+        }
+        public async Task<List<Salary>> GetByEmployeeCodeAsync(string employeeCode)
+        {
+            return await _marshallContext.Salary.AsNoTracking()
+                    .Where(s => s.EmployeeCode == employeeCode).ToListAsync();   
         }
     }
 }

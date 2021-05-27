@@ -12,5 +12,7 @@ namespace Marshall.Domain.Interfaces.Repositories
         public void Add(List<Salary> entity);
 
         public Task<bool> ExistEmployeeAsync(string employeeName, string employeeSurname);
+
+        public Task<List<Salary>> GetByEmployeeCodeAsync(string employeeCode);
     }
 }
