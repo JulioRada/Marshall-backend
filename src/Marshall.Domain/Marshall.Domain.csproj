@@ -8,8 +8,4 @@
     <ProjectReference Include="..\Marshall.Core\Marshall.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Commands\Salary\Validators\" />
-  </ItemGroup>
-
 </Project>
