@@ -39,37 +39,45 @@ namespace Marshall.Domain.Commands.Salary.Validators
                     return !ex.Any();
                 })
                 .WithSeverity(Severity.Error)
-                .WithMessage("One or more employee salaries already exist.");
+                .WithMessage("There are one or more employees registered in the month and year.");
         }
         protected void ValidateSalary()
         {
             RuleFor(s => s.BeginDate)
                 .Must((date) => !date.Equals(default(DateTime)))
                 .WithSeverity(Severity.Error)
-                .WithMessage("Begin date is not date valid")
+                .WithMessage("Begin date is not date valid.")
                 .Must((date) => DateTime.Compare(date, DateTime.Now) < 0)
                 .WithSeverity(Severity.Error)
-                .WithMessage("Date greater than the current date.");
-            
+                .WithMessage("Begin date greater than the current date.");
+
+            RuleFor(s => s.Birthday)
+                .Must((date) => !date.Equals(default(DateTime)))
+                .WithSeverity(Severity.Error)
+                .WithMessage("Birthday is not date valid.")
+                .Must((date) => DateTime.Compare(date, DateTime.Now) < 0)
+                .WithSeverity(Severity.Error)
+                .WithMessage("Birthday greater than the current date.");
+
             RuleFor(s => s.EmployeeCode)
                 .Must((employeeCode) => employeeCode.Length <= 10)
                 .WithSeverity(Severity.Error)
-                .WithMessage("Employee code too long");
+                .WithMessage("Employee code too long.");
 
             RuleFor(s => s.EmployeeName)
                 .Must((employeeName) => employeeName.Length <= 150)
                 .WithSeverity(Severity.Error)
-                .WithMessage("Employee Name too long");
+                .WithMessage("Employee Name too long.");
 
             RuleFor(s => s.EmployeeSurname)
                 .Must((employeeSurname) => employeeSurname.Length <= 150)
                 .WithSeverity(Severity.Error)
-                .WithMessage("Employee surname too long");
+                .WithMessage("Employee surname too long.");
 
             RuleFor(s => s.IdentificationNumber)
                 .Must((identificationNumber) => identificationNumber.Length <= 10)
                 .WithSeverity(Severity.Error)
-                .WithMessage("Identification number too long");
+                .WithMessage("Identification number too long.");
 
         }
     }
