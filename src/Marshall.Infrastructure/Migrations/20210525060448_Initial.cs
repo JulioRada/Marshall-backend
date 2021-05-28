@@ -75,7 +75,7 @@ namespace Marshall.Infrastructure.Migrations
                     BaseSalary = table.Column<double>(nullable: false),
                     ProductionBonus = table.Column<double>(nullable: false),
                     CompensationBonus = table.Column<double>(nullable: false),
-                    Commission = table.Column<double>(nullable: false),
+                    Comission = table.Column<double>(nullable: false),
                     Contributions = table.Column<double>(nullable: false)
                 },
                 constraints: table =>

@@ -202,7 +202,7 @@ namespace Marshall.Infrastructure.Migrations
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime2");
 
-                    b.Property<double>("Commission")
+                    b.Property<double>("Comission")
                         .HasColumnType("float");
 
                     b.Property<double>("CompensationBonus")

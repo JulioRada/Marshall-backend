@@ -9,7 +9,7 @@ namespace Marshall.Infrastructure.Migrations
         {
             migrationBuilder.InsertData(
                 table: "Salary",
-                columns: new[] { "Id", "BaseSalary", "BeginDate", "Birthday", "Commission", "CompensationBonus", "Contributions", "Created", "DivisionId", "EmployeeCode", "EmployeeName", "EmployeeSurname", "Grade", "IdentificationNumber", "Month", "OfficeId", "PositionId", "ProductionBonus", "Updated", "Year" },
+                columns: new[] { "Id", "BaseSalary", "BeginDate", "Birthday", "Comission", "CompensationBonus", "Contributions", "Created", "DivisionId", "EmployeeCode", "EmployeeName", "EmployeeSurname", "Grade", "IdentificationNumber", "Month", "OfficeId", "PositionId", "ProductionBonus", "Updated", "Year" },
                 values: new object[,]
                 {
                     { 1, 2799.4499999999998, new DateTime(2020, 5, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1990, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified), 0.0, 3215.6300000000001, 1000.0, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "10001222", "Mike", "James", 18, "4564132", 10, 2, 1, 50.5, null, 2020 },
