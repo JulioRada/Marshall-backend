@@ -23,11 +23,7 @@ namespace Marshall.Application.AutoMapper
             
             var config = new MapperConfiguration(configure =>
             {
-                
-                configure.CreateMap<DetailSalaryCommand, Domain.Entities.Salary>()
-                    .ForMember(d => d.Commission, o => o.MapFrom(s => s.Comission));
-                configure.CreateMap<CreateSalaryCommand, Domain.Entities.Salary>();
-
+                configure.CreateMap<DetailSalaryCommand, Domain.Entities.Salary>();
             });
              
             var mapper = config.CreateMapper();
@@ -36,13 +32,9 @@ namespace Marshall.Application.AutoMapper
 
             map.ForEach(i =>
             {
-                i.OfficeId = command.Office;
                 i.EmployeeCode = command.EmployeeCode;
                 i.EmployeeName = command.EmployeeName;
                 i.EmployeeSurname = command.EmployeeSurname;
-                i.DivisionId = command.Division;
-                i.PositionId = command.Position;
-                i.Grade = command.Grade;
                 i.BeginDate = command.BeginDate;
                 i.Birthday = command.Birthday;
                 i.IdentificationNumber = command.IdentificationNumber;

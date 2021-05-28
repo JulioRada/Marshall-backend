@@ -7,7 +7,6 @@ namespace Marshall.Domain.Commands.Salary
 {
     public class CreateSalaryCommand: CommandBase
     {
-        public int Office { get; set; }
         public string EmployeeCode { get; set; }
         protected string _employeeName;
         public string EmployeeName { 
@@ -20,9 +19,7 @@ namespace Marshall.Domain.Commands.Salary
             get { return this._employeeSurname; }
             set { this._employeeSurname = (value == null ? value : value.Trim().ToUpper()); }
         }
-        public int Division { get; set; }
-        public int Position { get; set; }
-        public int Grade { get; set; }
+        
         public DateTime BeginDate { get; set; }
         public DateTime Birthday { get; set; }
         public string IdentificationNumber { get; set; }
@@ -32,6 +29,10 @@ namespace Marshall.Domain.Commands.Salary
     public class DetailSalaryCommand {
         public int Year { get; set; }
         public int Month { get; set; }
+        public int Office { get; set; }
+        public int Division { get; set; }
+        public int Position { get; set; }
+        public int Grade { get; set; }
         public double BaseSalary { get; set; }
         public double ProductionBonus { get; set; }
         public double CompensationBonus { get; set; }
