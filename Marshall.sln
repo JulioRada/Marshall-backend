@@ -3,17 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.Api", "src\Marshall.Api\Marshall.Api.csproj", "{0EE60783-9A15-4F59-A972-C813BCAF9138}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marshall.Api", "src\Marshall.Api\Marshall.Api.csproj", "{0EE60783-9A15-4F59-A972-C813BCAF9138}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.IoC", "src\Marshall.IoC\Marshall.IoC.csproj", "{978B582D-A1A7-415A-B27B-598586714DA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marshall.IoC", "src\Marshall.IoC\Marshall.IoC.csproj", "{978B582D-A1A7-415A-B27B-598586714DA2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.Application", "src\Marshall.Application\Marshall.Application.csproj", "{0B7B4663-932D-4F44-8076-0E604B38A298}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marshall.Application", "src\Marshall.Application\Marshall.Application.csproj", "{0B7B4663-932D-4F44-8076-0E604B38A298}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.Infrastructure", "src\Marshall.Infrastructure\Marshall.Infrastructure.csproj", "{27181392-F484-4FD8-9C8C-5EA8360602AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marshall.Infrastructure", "src\Marshall.Infrastructure\Marshall.Infrastructure.csproj", "{27181392-F484-4FD8-9C8C-5EA8360602AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.Domain", "src\Marshall.Domain\Marshall.Domain.csproj", "{45982B24-2792-4352-8B38-A0569CF4E56B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marshall.Domain", "src\Marshall.Domain\Marshall.Domain.csproj", "{45982B24-2792-4352-8B38-A0569CF4E56B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.Core", "src\Marshall.Core\Marshall.Core.csproj", "{B1F74FBE-0B27-434D-9A1F-0F7880174770}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marshall.Core", "src\Marshall.Core\Marshall.Core.csproj", "{B1F74FBE-0B27-434D-9A1F-0F7880174770}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7AAB5A4E-F20B-4DA2-81DA-2A92CB5D70B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.Domain.Tests", "Tests\Marshall.Domain.Tests\Marshall.Domain.Tests.csproj", "{21275D1E-D89B-47D6-A821-19335D3B7B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.Integration.Tests", "Tests\Marshall.Integration.Tests\Marshall.Integration.Tests.csproj", "{9E822D11-49E6-4A30-B45C-1455E7EEB97A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marshall.Application.Tests", "Tests\Marshall.Application.Tests\Marshall.Application.Tests.csproj", "{FD9C720D-8B2D-4570-8DEB-E51F4C025E75}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +53,26 @@ Global
 		{B1F74FBE-0B27-434D-9A1F-0F7880174770}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1F74FBE-0B27-434D-9A1F-0F7880174770}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1F74FBE-0B27-434D-9A1F-0F7880174770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21275D1E-D89B-47D6-A821-19335D3B7B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21275D1E-D89B-47D6-A821-19335D3B7B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21275D1E-D89B-47D6-A821-19335D3B7B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21275D1E-D89B-47D6-A821-19335D3B7B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E822D11-49E6-4A30-B45C-1455E7EEB97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E822D11-49E6-4A30-B45C-1455E7EEB97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E822D11-49E6-4A30-B45C-1455E7EEB97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E822D11-49E6-4A30-B45C-1455E7EEB97A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD9C720D-8B2D-4570-8DEB-E51F4C025E75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD9C720D-8B2D-4570-8DEB-E51F4C025E75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD9C720D-8B2D-4570-8DEB-E51F4C025E75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD9C720D-8B2D-4570-8DEB-E51F4C025E75}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21275D1E-D89B-47D6-A821-19335D3B7B7D} = {7AAB5A4E-F20B-4DA2-81DA-2A92CB5D70B7}
+		{9E822D11-49E6-4A30-B45C-1455E7EEB97A} = {7AAB5A4E-F20B-4DA2-81DA-2A92CB5D70B7}
+		{FD9C720D-8B2D-4570-8DEB-E51F4C025E75} = {7AAB5A4E-F20B-4DA2-81DA-2A92CB5D70B7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08F5DBE3-DDEF-43E3-A792-F753D6E12C5A}

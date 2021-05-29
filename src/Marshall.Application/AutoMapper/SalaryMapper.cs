@@ -23,7 +23,13 @@ namespace Marshall.Application.AutoMapper
             
             var config = new MapperConfiguration(configure =>
             {
-                configure.CreateMap<DetailSalaryCommand, Domain.Entities.Salary>();
+                configure.CreateMap<DetailSalaryCommand, Domain.Entities.Salary>()
+                .ForMember(s => s.PositionId, o => o.MapFrom(s => s.Position ))
+                .ForMember(s => s.DivisionId, o => o.MapFrom(s => s.Division ))
+                .ForMember(s => s.OfficeId, o => o.MapFrom(s => s.Office ))
+                .ForMember(s => s.Position, o => o.Ignore())
+                .ForMember(s => s.Division, o => o.Ignore())
+                .ForMember(s => s.Office, o => o.Ignore());
             });
              
             var mapper = config.CreateMapper();

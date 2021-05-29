@@ -28,7 +28,7 @@ namespace Marshall.Domain.Entities
             double baseSalary,
             double productionBonus,
             double compensationBonus,
-            double Comission,
+            double comission,
             double contributions
         )
         {
@@ -47,7 +47,7 @@ namespace Marshall.Domain.Entities
             BaseSalary = baseSalary;
             ProductionBonus = productionBonus;
             CompensationBonus = compensationBonus;
-            Comission = Comission;
+            Comission = comission;
             Contributions = contributions;
         }
         public int Id { get; set; }

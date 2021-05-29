@@ -24,7 +24,7 @@ namespace Marshall.Infrastructure.Repositories
                 s => s.EmployeeName.Equals(employeeName) && s.EmployeeSurname.Equals(employeeSurname)
             );
         }
-        public async Task<List<Salary>> GetByEmployeeCodeAsync(string employeeCode)
+        public async Task<List<Salary>> GetSalaryByEmployeeCodeAsync(string employeeCode)
         {
             return await _marshallContext.Salary.AsNoTracking()
                     .Where(s => s.EmployeeCode == employeeCode).ToListAsync();   
