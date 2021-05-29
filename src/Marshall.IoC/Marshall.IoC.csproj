@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Marshall.Application\Marshall.Application.csproj" />
     <ProjectReference Include="..\Marshall.Infrastructure\Marshall.Infrastructure.csproj" />
   </ItemGroup>
 
