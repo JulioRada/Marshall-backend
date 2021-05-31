@@ -12,14 +12,6 @@ namespace Marshall.Application.Position
     {
         private readonly IPositionRepository _positionRepository;
 
-        /*
-        public async Task<IEnumerable<OfficeDTO>> GetAllAsync()
-        {
-            var result = await _officeRepository.GetAllAsync();
-
-            var office = Mapper<Marshall.Domain.Entities.Office, OfficeDTO>.EntityToDTO(result);
-            return office;
-        }*/
         public PositionQueries(IPositionRepository positionRepository)
         {
             _positionRepository = positionRepository;

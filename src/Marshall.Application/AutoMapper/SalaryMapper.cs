@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Marshall.Domain.Commands.Salary;
+using Marshall.Domain.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -47,6 +48,29 @@ namespace Marshall.Application.AutoMapper
             });
 
             return map;
+        }
+        public static IEnumerable<SalaryDTO> EntityToDTO2(IEnumerable<Domain.Entities.Salary> entity)
+        {
+            var  config = new MapperConfiguration(c => 
+                c.CreateMap<Domain.Entities.Salary, SalaryDTO>()
+            );
+                    
+            var mapper = config.CreateMapper();
+
+            return mapper.Map<IEnumerable<SalaryDTO>>(entity);
+        }
+        public static IEnumerable<SalaryDTO> EntityToDTO(IEnumerable<Domain.Entities.Salary> entity)
+        {
+            var config = new MapperConfiguration(c => {
+                c.CreateMap<Domain.Entities.Salary, SalaryDTO>();
+                c.CreateMap<Domain.Entities.Office, OfficeDTO>();
+                c.CreateMap<Domain.Entities.Division, DivisionDTO>();
+                c.CreateMap<Domain.Entities.Position, PositionDTO>();
+            });
+
+            var mapper = config.CreateMapper();
+            
+            return mapper.Map<IEnumerable<SalaryDTO>>(entity);
         }
     }
 }

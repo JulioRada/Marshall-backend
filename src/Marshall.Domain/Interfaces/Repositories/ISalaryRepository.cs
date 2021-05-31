@@ -13,6 +13,8 @@ namespace Marshall.Domain.Interfaces.Repositories
 
         public Task<bool> ExistEmployeeAsync(string employeeName, string employeeSurname);
 
+        public Task<List<Salary>> GetSalaryByEmployeeCodeAsync(string employeeCode, int records);
         public Task<List<Salary>> GetSalaryByEmployeeCodeAsync(string employeeCode);
+        public Task<IEnumerable<Salary>> GetAllAsync();
     }
 }
