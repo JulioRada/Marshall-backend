@@ -40,6 +40,7 @@ namespace Marshall.IoC
             services.AddScoped<IOfficeQueries, OfficeQueries>();
             services.AddScoped<IDivisionQueries, DivisionQueries>();
             services.AddScoped<IPositionQueries, PositionQueries>();
+            services.AddScoped<ISalaryQueries, SalaryQueries>();
 
             // Config App
             services.AddAppCors();

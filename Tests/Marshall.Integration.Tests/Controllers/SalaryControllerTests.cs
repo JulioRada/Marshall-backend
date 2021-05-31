@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net;
 using FluentAssertions;
 using Marshall.Core.Commands;
+using Marshall.Domain.DTO;
 
 namespace Marshall.Integration.Tests.Controllers
 {
@@ -126,6 +127,21 @@ namespace Marshall.Integration.Tests.Controllers
             // Assert
             secondHttpResponseMessage.StatusCode.Should().Be(HttpStatusCode.OK);
             response.Errors.Should().HaveCountGreaterOrEqualTo(1);
+        }
+
+        [Fact]
+        public async void Should_Get_Salary_By_Employee_Code()
+        {
+            //Arrange
+            var secondHttpResponseMessage = _httpClient.GetAsync($"{url}/0/3").Result;
+
+            //Act
+            var response = await secondHttpResponseMessage.Content.ReadAsAsync<List<SalaryDTO>>();
+
+            // Assert
+            secondHttpResponseMessage.StatusCode.Should().Be(HttpStatusCode.OK);
+            response.Should().HaveCountLessOrEqualTo(0);
+            response.Should().BeInAscendingOrder(x => x.Year);
         }
     }
 }

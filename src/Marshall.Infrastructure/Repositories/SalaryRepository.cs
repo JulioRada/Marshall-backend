@@ -1,4 +1,5 @@
-﻿using Marshall.Domain.Entities;
+﻿using DelegateDecompiler;
+using Marshall.Domain.Entities;
 using Marshall.Domain.Interfaces.Repositories;
 using Marshall.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
@@ -28,6 +29,44 @@ namespace Marshall.Infrastructure.Repositories
         {
             return await _marshallContext.Salary.AsNoTracking()
                     .Where(s => s.EmployeeCode == employeeCode).ToListAsync();   
+        }
+        public async Task<List<Salary>> GetSalaryByEmployeeCodeAsync(string employeeCode, int records)
+        {
+            var result = await _marshallContext.Salary.AsNoTracking()
+                    .Include(s => s.Office)
+                    .Include(s => s.Division)
+                    .Include(s => s.Position)
+                    .Where(s => s.EmployeeCode == employeeCode)
+                    .Take(records)
+                    .ToListAsync();
+
+            return OrderSalary(result);
+        }
+        public async Task<IEnumerable<Salary>> GetAllAsync()
+        {
+            var result = await _marshallContext.Salary
+                    .Include(s => s.Office)
+                    .Include(s => s.Division)
+                    .Include(s => s.Position)
+                    .AsNoTracking()
+                    .ToListAsync();
+
+            return OrderSalary(result);
+        }
+        private List<Salary> OrderSalary(List<Salary> salary)
+        {
+            return salary
+                    .Select(s => new Salary(s))
+                    .OrderByDescending(s => s.Year)
+                    .ThenByDescending(s => s.Month)
+                    .ThenByDescending(s => s.EmployeeCode)
+                    .ThenByDescending(s => s.EmployeeFullName)
+                    .ThenByDescending(s => s.Division)
+                    .ThenByDescending(s => s.Position)
+                    .ThenByDescending(s => s.BeginDate)
+                    .ThenByDescending(s => s.Birthday)
+                    .ThenByDescending(s => s.IdentificationNumber)
+                    .ToList();
         }
     }
 }
