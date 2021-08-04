@@ -1,0 +1,15 @@
+version: "3.4"
+
+networks:
+  inner_net:
+    driver: bridge
+  
+services:
+  web:
+    build: 
+        context: .
+    container_name: marshall_backend_api
+    ports:
+      - "3000:80"
+    networks: 
+      - inner_net
