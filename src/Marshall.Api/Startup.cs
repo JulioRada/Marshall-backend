@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Marshall.IoC;
+using Prometheus;
 
 namespace Marshall.Api
 {
@@ -40,7 +41,24 @@ namespace Marshall.Api
             }
 
             app.Register();
-            
+
+            app.UseMetricServer();
+            app.UseHttpMetrics();
+
+            app.Use((context, next) =>
+            {
+                // Http Context
+                var counter = Metrics.CreateCounter
+                ("PathCounter", "Count request",
+                new CounterConfiguration
+                {
+                    LabelNames = new[] { "method", "endpoint" }
+                });
+                // method: GET, POST etc.
+                // endpoint: Requested path
+                counter.WithLabels(context.Request.Method, context.Request.Path).Inc();
+                return next();
+            });
 
             app.UseRouting();
 

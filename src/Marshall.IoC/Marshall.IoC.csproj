@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="prometheus-net.AspNetCore" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Marshall.Application\Marshall.Application.csproj" />
     <ProjectReference Include="..\Marshall.Infrastructure\Marshall.Infrastructure.csproj" />
   </ItemGroup>
