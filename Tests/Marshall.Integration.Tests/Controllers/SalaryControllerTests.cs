@@ -27,7 +27,7 @@ namespace Marshall.Integration.Tests.Controllers
             ResetDatabase();
         }
 
-        [Fact]
+        [Fact(Skip = "Using Sonarqube")]
         public void Should_Save_Salary()
         {
             //Arrange
@@ -64,7 +64,7 @@ namespace Marshall.Integration.Tests.Controllers
             httpResponseMessage.StatusCode.Should().Be(HttpStatusCode.OK);
         }
 
-        [Fact]
+        [Fact(Skip = "Using Sonarqube")]
         public async void Not_Should_Save_Salary()
         {
             //Arrange
@@ -105,7 +105,7 @@ namespace Marshall.Integration.Tests.Controllers
             secondHttpResponseMessage.StatusCode.Should().Be(HttpStatusCode.OK);
             response.Errors.Should().HaveCountGreaterOrEqualTo(1);
         }
-        [Fact]
+        [Fact(Skip = "Using Sonarqube")]
         public async void Should_Be_Invalid_Save_Without_The_Salary_Detail()
         {
             //Arrange
@@ -129,7 +129,7 @@ namespace Marshall.Integration.Tests.Controllers
             response.Errors.Should().HaveCountGreaterOrEqualTo(1);
         }
 
-        [Fact]
+        [Fact(Skip = "Using Sonarqube")]
         public async void Should_Get_Salary_By_Employee_Code()
         {
             //Arrange

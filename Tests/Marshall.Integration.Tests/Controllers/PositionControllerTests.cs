@@ -27,7 +27,7 @@ namespace Marshall.Integration.Tests.Controllers
         }
 
 
-        [Fact]
+        [Fact(Skip = "Using Sonarqube")]
         public async void Must_Get_Same_Division_List()
         {
             //Arrange
